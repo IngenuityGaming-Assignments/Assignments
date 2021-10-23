@@ -111,8 +111,8 @@
         }
 
         inp.addEventListener("keypress", function(e){
-            if(e.type == "keypress"){
-                if(e.keyCode == 13){
+            if(e.type === "keypress"){
+                if(e.keyCode === 13){
                     items();
                 }
             }
@@ -137,14 +137,14 @@
         }
 
         document.addEventListener('click',function(e){
-            if(e.target && e.target.id == 'tick'){
+            if(e.target && e.target.id === 'tick'){
                 e.target.parentNode.classList.toggle('line');
             }
 
-            if(e.target.id == 'dlt'){
+            if(e.target.id === 'dlt'){
                 e.target.parentNode.remove();
-                localStorage.setItem('list', todo.innerHTML)
             }
+            localStorage.setItem('list', todo.innerHTML)
         });
 
     </script>
