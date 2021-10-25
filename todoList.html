@@ -139,12 +139,13 @@
         document.addEventListener('click',function(e){
             if(e.target && e.target.id === 'tick'){
                 e.target.parentNode.classList.toggle('line');
+                localStorage.setItem('list', todo.innerHTML)
             }
 
             if(e.target.id === 'dlt'){
                 e.target.parentNode.remove();
+                localStorage.setItem('list', todo.innerHTML)
             }
-            localStorage.setItem('list', todo.innerHTML)
         });
 
     </script>
