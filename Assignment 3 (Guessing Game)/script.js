@@ -18,8 +18,8 @@ const inpu = document.getElementById('number-input');
 const guess = document.getElementById('guesses-remaining');
 const prev_guess = document.getElementById('prev-guesses');
 
-const ran = Math.abs(Math.floor(Math.random()*100));
-console.log(ran)
+const ran = Math.floor(Math.random()*100);
+// console.log(ran)
 
 var hint_left = false;
 hint.onclick = function(){
