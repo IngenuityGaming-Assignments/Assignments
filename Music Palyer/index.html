@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./CSS.css">
+    <title>Music Player</title>
+    
+</head>
+<body>
+    <main>
+        <h2 id='trackName'>Abc</h2>
+        <article id='circle'></article>
+        <article id="navbar">
+            
+            <!-- <button id='repeat' type="button" disabled class='nav_btn'><i class="fas fa-repeat icn " style="font-size: 30px;"></i></button> -->
+            <i class="fas fa-repeat icn hide"id='repeat' style="font-size: 30px;"></i>
+
+            <button id='back' type="button" disabled class='nav_btn'><i  class="far fa-chevron-circle-left icn" style="font-size: 40px;"></i></button>
+            <i id='pause' class="fas fa-pause icn" style="display: none; font-size: 50px;"></i>
+            <i id='play' class="fas fa-play icn" style=" font-size: 40px;"></i>
+            <button id='next' type="button" class='nav_btn'><i class="far fa-chevron-circle-right icn" style="font-size: 40px;"></i></button>
+        </article>
+
+        <article id="time">
+            <span id='cur'>00:00</span>
+            <input type="range" name="" id="range" value="0">
+            <span id='total'>02:13</span>
+
+        </article>
+
+        <article id="vol">
+            <i class="fas fa-volume-up" style="margin-right: 20px;"></i>
+            <input type="range" id='vol_cur' value=50>
+
+        </article>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+</html>
