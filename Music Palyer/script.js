@@ -5,6 +5,9 @@ const trackName = document.getElementById('trackName');
         const range = document.getElementById('range');
         var rep = false;
 
+        range.onchange = () => {
+            ap.currentTime = (range.value/100)* ap.duration
+        }   
 
         const ap = document.createElement('audio');
         ap.volume = 0.5;
@@ -31,7 +34,7 @@ const trackName = document.getElementById('trackName');
         const pause = document.getElementById('pause');
         const play = document.getElementById('play');
 
-        document.addEventListener('click',async (e) => {
+        document.addEventListener('click', async (e) => {
             if(e.target.id == 'pause'){
                 ap.pause();
 
@@ -42,12 +45,8 @@ const trackName = document.getElementById('trackName');
             else if(e.target.id == 'play'){
                 await ap.play();
                 
-                
-                // console.log(playlist[ind].sr)
-
                 play.style.display = 'none';
                 pause.style.display = 'unset';
-
 
             }
             else if(e.target.id == 'repeat'){
@@ -76,13 +75,14 @@ const trackName = document.getElementById('trackName');
         back.onclick = () => { 
             if(rep && ind === 0){
                 ind = 2;
-                setSrc()
             }
             
             else{
                 ind--;
-                setSrc()
+                
             } 
+
+            setSrc()
 
             if(!rep && ind === 0){
                 back.disabled = true;
@@ -147,6 +147,22 @@ const trackName = document.getElementById('trackName');
         function setRange(){
             curTime()
             range.value = (ap.currentTime/ap.duration)*100
+
+            if(ap.currentTime === ap.duration){
+                if(rep && ind === 2){
+                    ind = 0;
+                    setSrc()
+                }
+                else if(ind === 2){
+                    pause.style.display = 'none';
+                    play.style.display = 'unset';
+                }
+                else if(ind < 2){
+                    ++ind;
+                    setSrc()
+                }
+                
+            }
         }
         
         function curTime(){
