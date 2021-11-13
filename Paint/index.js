@@ -1,10 +1,8 @@
-var col = document.getElementById('col');
-    // console.log(col.value)
+  var col = document.getElementById('col');
     const can = document.getElementById('can');
     const nav = document.getElementById('nav')
-    // nav.style.width = window.innerWidth - 15
-    // can.width = nav.style.width
-    // can.height = window.innerHeight - 95;
+    can.width = window.innerWidth;
+    can.height = window.innerHeight - 90
     const ctx = can.getContext('2d')
     var shape = document.querySelector('input[type="radio"][name="shape"]:checked').value;
 
