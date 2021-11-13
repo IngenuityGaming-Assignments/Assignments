@@ -24,6 +24,7 @@
   width: 600px;
   justify-content: space-between;
   align-items: center;
+  margin-right: 300px;
 }
 #prop{
   margin-right: 100px;
@@ -35,4 +36,8 @@
 .fas, .far{
   font-size: 30px;
   margin-left: 10px;
+}
+#shape_fill:hover, #shape_emp:hover{
+  cursor: pointer;
+
 }

@@ -1,10 +1,28 @@
-  var col = document.getElementById('col');
+var col = document.getElementById('col');
     const can = document.getElementById('can');
     const nav = document.getElementById('nav')
+
     can.width = window.innerWidth;
     can.height = window.innerHeight - 90
     const ctx = can.getContext('2d')
+
     var shape = document.querySelector('input[type="radio"][name="shape"]:checked').value;
+
+    const emp = document.getElementById('shape_emp');
+    const fl = document.getElementById('shape_fill')
+
+    function makeEmp(){
+      emp.style.display = "unset";
+      fl.style.display = 'none'
+      isFill = false;
+    }
+    function makeFill(){
+      fl.style.display = "unset";
+      emp.style.display = 'none'
+      isFill = true;
+    }
+
+    var isFill = false
 
     var isLine = false;
     function enableLine(){
@@ -43,7 +61,6 @@
 
         if(shape === 'erase'){
           ctx.strokeStyle = '#FFFFFF'
-          // can.style.cursor = "pointer"
         }
         ctx.lineWidth = lw.value;
         ctx.lineCap = "round";
@@ -60,13 +77,14 @@
       console.log(shape)
       ctx.strokeStyle = col.value
       ctx.lineWidth = lw.value;
-      // console.log(col.value)
 
       if(shape === "line" || shape === 'rectangle' || shape === 'circle' || shape === 'hexagon'){
         x = e.pageX;
         y = e.pageY;
         md = true;
         img.src = can.toDataURL();
+
+        ctx.fillStyle = col.value
       }
       else if(shape === "paint" || shape === 'erase'){
         start(e)
@@ -79,7 +97,6 @@
       }
       if(shape === "line" || shape === 'rectangle' || shape === 'circle' || shape === 'hexagon'){
         md = false;
-        // console.log('mouseup')
       }
       else if(shape === "paint" || shape === 'erase'){
         end()
@@ -90,7 +107,6 @@
 
       if(shape === 'rectangle'){
         if(md){
-          // console.log(shape)
             ctx.clearRect(0, 0, can.width, can.height);
             ctx.drawImage(img, 0, 0 )
             ctx.beginPath();
@@ -104,9 +120,14 @@
                 rect_y = e.pageY
 
             }
-            // ctx.strokeStyle = col.value
-            ctx.strokeRect(rect_x, rect_y, Math.abs(x - e.pageX), Math.abs(y - e.pageY));
-            // ctx.strokeStyle = col.value
+            
+            ctx.rect(rect_x, rect_y, Math.abs(x - e.pageX), Math.abs(y - e.pageY));
+            
+            if(isFill){
+              ctx.fill()
+            }
+            ctx.stroke()
+           
           }
       }
       else if(shape === "line"){
@@ -126,6 +147,9 @@
             ctx.drawImage(img, 0, 0 )
             ctx.beginPath();
             ctx.arc(x, y, Math.abs(x - e.pageX), 0, 2 * Math.PI);
+            if(isFill){
+              ctx.fill()
+            }
             ctx.stroke();
             ctx.closePath()
           }
@@ -142,6 +166,9 @@
                 ctx.lineTo(x + r * Math.cos(a * i), y + r * Math.sin(a * i));
             }
             ctx.closePath();
+            if(isFill){
+              ctx.fill()
+            }
             ctx.stroke();
           }
       }
