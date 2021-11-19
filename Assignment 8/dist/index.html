@@ -1,0 +1,67 @@
+<!doctype html><html><head><meta charset="utf-8"/><title>Webpack App</title><link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script><style>body{
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: linear-gradient(to right, pink 20%, rgb(0, 162, 255) 100%);
+            }
+            main{
+                border-radius: 5px;
+                box-shadow: 1px 1px 15px 2px  black;
+                width: 450px;
+                height: 650px;
+                margin-top: 4vh;
+                padding: 10px;
+                /* display: flex;
+                flex-direction: column;
+                justify-self: center;
+                align-items: center; */
+            }
+            #loc{
+                background-color: transparent;
+                border: none;
+                color: black;
+                font-size: 30px !important;
+                font-weight: 600;
+                font-size: 20px;
+            }
+            .wea_icon{
+                font-size: 150px;
+                margin: 30px 0 0 120px;
+            }
+            #temp{
+                margin-top: 20px;
+                position: relative;
+            }
+            #cur_temp{
+                font-size: 60px;
+                font-weight: 600;
+                width: "";
+            }
+            #celcius{
+                font-size: 25px;
+                position: absolute;
+                top: 20px;
+                left: 70px;   
+            }
+            .fl{
+                font-size: 25px;
+            }
+            #wea_details{
+                margin-top: 20px;
+            }
+            .row{
+                font-weight: 600;
+                font-size: 20px;
+                display: flex;
+                width: 100%;
+                justify-content: space-evenly;
+            }
+            .properties{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            #wea_heading{
+                margin-left: 140px;
+            }</style><script defer="defer" src="index.7a030257e762ef3bd107.js"></script></head><body><main><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="loc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" value="Delhi">Palwal</button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><button class="dropdown-item" id="amritsar">Amritsar</button> <button class="dropdown-item" id="mumbai">Mumbai</button> <button class="dropdown-item" id="faridabad">Faridabad</button> <button class="dropdown-item" id="noida">Noida</button> <button class="dropdown-item" id="palwal">Palwal</button></div></div><article id="icon"><i class="fas fa-sun wea_icon" id="clear"></i> <i class="far fa-clouds wea_icon" id="cloudy"></i> <i class="fas fa-sun-cloud wea_icon" id="sun_cloud"></i></article><article id="temp"><span id="cur_temp">20</span><br><span class="fl">Feels like </span><span id="feels_like" class="fl"></span> <span class="fl">&#186 C</span> <span id="celcius">&#186 C</span></article><br><span id="wea_heading">Weather Details</span><article id="wea_details"><artice class="row"><article class="properties">UV <span id="uv">0</span></article><article class="properties">Pressure <span id="pressure">0</span></article></artice><br><article class="row"><article class="properties">Visibilty <span id="visibilty">0</span></article><article class="properties">Humidity <span id="humidity">0</span></article></article></article></main></body></html>
