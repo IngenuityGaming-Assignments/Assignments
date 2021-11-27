@@ -1,4 +1,5 @@
 import { Application, Container, DEG_TO_RAD, Text, Graphics} from "pixi.js";
+import { BlurFilter } from "@pixi/filter-blur"
 import gsap from 'gsap'
 import {Slice} from './slice'
 import {sliceData} from './sliceData'
@@ -63,6 +64,14 @@ app.stage.on("mouseover", (e: any) => {
 })
 
 function spin(){
+
+  const blur = new BlurFilter(10, 10);
+    app.stage.filters = [blur];
+    gsap.to(blur, {
+      blur: 0,
+      duration: 6,
+      // ease: "power4.inOut",
+    });
   const ran: number = getRandNumByProb(arr, prob, arr.length-1)
   gsap.fromTo(con, 
     {rotation: 0},
