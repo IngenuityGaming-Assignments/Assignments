@@ -2,7 +2,7 @@ import {Application, ParticleContainer, Container} from "pixi.js";
 import * as particles from "@pixi/particle-emitter";
 const app = new Application({
     width: window.innerWidth,
-    height: 100,
+    height: window.innerHeight,
     antialias: true,
     backgroundColor: 0x2980b9,
 })
