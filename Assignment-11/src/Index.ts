@@ -2,7 +2,7 @@ import {Application, ParticleContainer, Container} from "pixi.js";
 import * as particles from "@pixi/particle-emitter";
 const app = new Application({
     width: window.innerWidth,
-    height: window.innerHeight,
+    height: 800,
     antialias: true,
     backgroundColor: 0x2980b9,
 })
@@ -14,7 +14,7 @@ app.loader.add("gold-coins", "https://pixijs.io/particle-emitter/examples/images
 .add("bubble", "https://pixijs.io/particle-emitter/examples/images/Bubbles99.png")
 .add('snow', "https://pixijs.io/particle-emitter/examples/images/Snow100.png")
 .add('sparks',"https://pixijs.io/particle-emitter/examples/images/Sparks.png")
-.add("diamond","https://cdn-icons.flaticon.com/png/512/3137/premium/3137715.png?token=exp=1638509960~hmac=92735fb9e9e303105425044660e85760")
+// .add("diamond","https://cdn-icons.flaticon.com/png/512/3137/premium/3137715.png?token=exp=1638509960~hmac=92735fb9e9e303105425044660e85760")
 .load((l, r) => {
 
   const container = new Container();
